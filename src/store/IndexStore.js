@@ -149,7 +149,7 @@ export const indexStore = defineStore("rotas", () =>{
         return mesF +"/"+anoF;
         } 
  
-    const mesSelecionado =  '12/2023'
+    const mesSelecionado =  mesAtual()
     
     function dataHora(){
       var data = new Date(),
