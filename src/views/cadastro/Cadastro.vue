@@ -388,9 +388,9 @@
                 store.tipoComissaoAvulsaNew = []
                 store.tipoComissaoAvulsaNew = store.tipoComissaoAvulsa.filter(f => f.COD_EMPRESA == usuario.COD_EMPRESA && f.COD_FUNCAO ==usuario.COD_FUNCAO && f.MES == usuario.MES)
                 store.tipoComissaoAvulsaNew.push({ "COD_EMPRESA": usuario.COD_EMPRESA, "COD_FUNCAO": usuario.COD_FUNCAO, "TIPO": 'CREDITO-VENDAS', "MES": store.mesSelecionado},
-                                                { "COD_EMPRESA": usuario.COD_EMPRESA, "COD_FUNCAO": usuario.COD_FUNCAO, "TIPO": 'CREDITO-BONUS', "MES": store.mesSelecionado},
+                                                { "COD_EMPRESA": usuario.COD_EMPRESA, "COD_FUNCAO": usuario.COD_FUNCAO, "TIPO": 'CREDITO-PREMIO', "MES": store.mesSelecionado},
                                                  { "COD_EMPRESA": usuario.COD_EMPRESA, "COD_FUNCAO": usuario.COD_FUNCAO, "TIPO": 'DEBITO-VENDAS', "MES": store.mesSelecionado},                                                 
-                                                 { "COD_EMPRESA": usuario.COD_EMPRESA, "COD_FUNCAO": usuario.COD_FUNCAO, "TIPO": 'DEBITO-BONUS', "MES": store.mesSelecionado}
+                                                 { "COD_EMPRESA": usuario.COD_EMPRESA, "COD_FUNCAO": usuario.COD_FUNCAO, "TIPO": 'DEBITO-PREMIO', "MES": store.mesSelecionado}
                                                         )
             }
  
