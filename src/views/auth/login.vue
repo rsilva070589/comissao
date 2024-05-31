@@ -1,11 +1,6 @@
 <template> 
 
-<div > 
-{{ storeLogin.dadosUsuario}} 
-
-
-<br><br>
-</div>
+ 
 
     <div v-if="store.alertLogin" @click="store.alertLogin=false"
       style="z-index: 1080" role="alert" aria-live="assertive" aria-atomic="true">
