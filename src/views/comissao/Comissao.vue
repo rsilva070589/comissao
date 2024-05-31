@@ -254,7 +254,7 @@ import { async } from 'file-upload-with-preview';
         const storeLogin = useUserStore()  
         const router = useRouter() 
     
-        login()
+       
         store.vendedorSelecionado = 0
     
         store.notaNPS = 0
@@ -286,7 +286,9 @@ import { async } from 'file-upload-with-preview';
     
     
         onMounted(() => {
+            login()
             bind_data();
+     
             feather.replace();
         });
     

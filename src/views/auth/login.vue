@@ -1,7 +1,9 @@
 <template> 
 
-<div v-if="1==2"> 
+<div > 
 {{ storeLogin.dadosUsuario}} 
+
+
 <br><br>
 </div>
 
@@ -147,14 +149,11 @@
               }
           };
       
-          const getLogin = ()=> {  
+          const getLogin1 = ()=> {  
       
             if (1){
                 axios.get(store.baseApiHTTPS+'/usuarios')
                   .then((response) => {
-                  
-                  
-                
                   store.respostaAxios = response.data 
                   //storeLogin.empresas.dadosempresa.push({ "identificacaointegracao": "CENTRAL" },)
                   storeLogin.dadosUsuario = store.respostaAxios?.filter(f => f.EMAIL == storeLogin.email)
@@ -175,6 +174,46 @@
             }
                   
           }
+
+          const getLogin = ()=> {
+           
+           let data = JSON.stringify({ 
+           "USUARIO": storeLogin.email,
+           "SENHA": storeLogin.senha,
+          
+           });
+
+           let config = {
+           method: 'post',
+           maxBodyLength: Infinity,
+           url: store.baseApiHTTPS+'/login',           
+           headers: { 
+               'Content-Type': 'application/json', 
+               'Authorization': 'Basic dGVzdHNlcnZlcjp0ZXN0c2VydmVy'
+           },
+           data : data
+           };
+
+           axios.request(config)
+           .then((response) => {
+
+            if (response.data[0].NOME){
+                storeLogin.dadosUsuario = response.data
+                storeLogin.loginAtivo = 'YES'         
+                storeLogin.empresas.dadosempresa = response.data
+                router.push('/') 
+            }else{
+               store.alertLogin=true
+               storeLogin.loginAtivo = 'NO'               
+            }   
+        
+           })
+           .catch((error) => {
+               store.alertLogin=true
+           console.log(error);
+           });               
+
+   }
 
           const callback = (response) => {
             console.log("Handle the response", response)
