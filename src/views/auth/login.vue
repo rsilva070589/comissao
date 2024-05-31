@@ -1,6 +1,9 @@
 <template> 
 
- 
+<div v-if="1==1">
+    {{ store.dadosUsuario }}
+</div> 
+
 
     <div v-if="store.alertLogin" @click="store.alertLogin=false"
       style="z-index: 1080" role="alert" aria-live="assertive" aria-atomic="true">
@@ -195,11 +198,11 @@
             if (response.data[0].NOME){
                 storeLogin.dadosUsuario = response.data
                 storeLogin.loginAtivo = 'YES'         
-                storeLogin.empresas.dadosempresa = response.data
+             //   storeLogin.empresas.dadosempresa = response.data
                 router.push('/') 
             }else{
                store.alertLogin=true
-               storeLogin.loginAtivo = 'NO'               
+                            
             }   
         
            })
