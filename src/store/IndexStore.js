@@ -20,7 +20,7 @@ export const indexStore = defineStore("rotas", () =>{
     if (location.hostname == 'localhost') {
       baseApiHTTPS  = 'http://192.168.10.12:4141' 
     }else{
-      baseApiHTTPS  = 'http://192.168.10.54:4141'
+      baseApiHTTPS  = 'http://192.168.10.12:4141'
     }
  
  
