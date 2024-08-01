@@ -168,6 +168,15 @@
                             </router-link>
                         </li> 
                     </ul>
+                    <ul id="cadastro" class="collapse submenu list-unstyled" data-bs-parent="#sidebar">
+                         
+                         <li>
+                             <router-link to="/checkpoint" @click="toggleMobileMenu">
+                                 {{ $t('checkpoint') }}
+                             </router-link>
+                         </li> 
+                     </ul>
+
                 </li>
             </perfect-scrollbar>
         </nav>
